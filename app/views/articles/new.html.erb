@@ -1,28 +1,3 @@
 <h1>New Article</h1>
 
-<%= form_with model: @article do |form| %>
-  <div>
-    <%= form.label :title  %> <br>
-    <%= form.text_field :title %>
-    <% # full_message_for gets us an array of error messages for the
-    # specified attribute %>
-
-    <% @article.errors.full_messages_for(:title).each do |message| %>
-      <%= messsage %>
-    <% end %>
-
-  </div>
-
-  <div>
-    <%= form.label :body%>
-    <%= form.text_field :body %>
-
-    <% @article.errors.full_messages_for(:body).each do |message| %>
-      <%= message %>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render "form", article: @article %>
