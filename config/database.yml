@@ -23,5 +23,6 @@ test:
 production:
   <<: *default
   database: storage/production
-  username: pixel_place
-  password: <%= ENV['PIXEL_PLACE_DATABASE_PASSWORD'] %>
+  username: blog_production
+  url: <%=ENV["DATABASE_URL"]%>
+
